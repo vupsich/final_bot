@@ -4,12 +4,11 @@ require: city/city.sc
 theme: /
     state: Greeting
         q!: $regex</start>
-        a: Здравствуйте! Я ваш персональный помощник по подбору экскурсии!
-        go!: /getCity
-        
-        
+
         
     state: getCity
+        intent!: /привет
+        a: {{$context.intent.answer}}
         a: В каком городе вас интересует экскурсия?
         buttons:
             "Пропустить" -> ./skipCatchCity
