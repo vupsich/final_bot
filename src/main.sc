@@ -4,11 +4,13 @@ require: city/city.sc
 theme: /
     state: Greeting
         q!: $regex</start>
-
-        
-    state: getCity
+    
+    state: Hello
         intent!: /привет
         a: {{$context.intent.answer}}
+        go!: /getCity
+        
+    state: getCity
         a: В каком городе вас интересует экскурсия?
         buttons:
             "Пропустить" -> ./skipCatchCity
@@ -51,7 +53,7 @@ theme: /
             "Пропустить" -> ./skipСatchCategoty
             "Вернуться на шаг назад" -> /getCity
         state: catchCategory
-            q: * @categories *
+            intent!: /categoryInt
             script:
                 $session.category = $parseTree._categories.name
             a: Отлично! Вы выбрали категорию - {{$session.category}}.
@@ -76,7 +78,7 @@ theme: /
             "Вернуться на шаг назад" -> /getCategoty
             
         state: catchBudget
-            q: * @duckling.number *
+            intent: /budgetInt
             script:
                 $session.budget = $parseTree["_duckling.number"];
             a: Хорошо! Ваш бюджет {{$session.budget}}!
@@ -104,7 +106,7 @@ theme: /
             "Вернуться на шаг назад" -> /getBudget
             
         state: catchParticipant
-            q: * @duckling.number *
+            intent: /participantInt
             script:
                 $session.max_participants = $parseTree["_duckling.number"];
             a: Отлично! Максимально допустимое количество участников {{$session.max_participants}}.
@@ -180,7 +182,7 @@ theme: /
             a: {{$temp.answer}}
             buttons:
                 "Да" -> /newState
-                "Вернуться в начало" -> /Greeting
+                "Вернуться в начало" -> /getCity
             
         # СЮДА ЧТО ТО ПОЙДЕТ
         # script:

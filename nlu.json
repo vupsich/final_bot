@@ -23,6 +23,88 @@
     }
   },
   "intents" : [ {
+    "path" : "/categoryInt",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Я хочу найти экскурсию в категории @categories."
+    }, {
+      "text" : "Подскажите экскурсии с категорией @categories"
+    }, {
+      "text" : "Экскурсии с категорией @categories мне подойдут"
+    }, {
+      "text" : "В категории @categories что-то есть?"
+    }, {
+      "text" : "@categories"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "categories",
+      "entity" : "categories",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/numberInt",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@duckling.phone-number"
+    }, {
+      "text" : "Это мой номер @duckling.phone-number"
+    }, {
+      "text" : "Позвоните мне на @duckling.phone-number"
+    }, {
+      "text" : "Вот мой телефон для связи: @duckling.phone-number, буду ждать звонка"
+    }, {
+      "text" : "Можете звонить мне на номер @duckling.phone-number, это самый удобный способ"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "duckling.phone-number",
+      "entity" : "duckling.phone-number",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/participantInt",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Максимум @duckling.number человек"
+    }, {
+      "text" : "Не больше @duckling.number человек"
+    }, {
+      "text" : "До @duckling.number человек"
+    }, {
+      "text" : "Экскурсия для @duckling.number человек"
+    }, {
+      "text" : "Ищу экскурсию, где может быть максимум @duckling.number человек в группе"
+    }, {
+      "text" : "@duckling.number человек"
+    }, {
+      "text" : "@duckling.number"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "duckling.number",
+      "entity" : "duckling.number",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -59,6 +141,34 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/budgetInt",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@duckling.number рублей"
+    }, {
+      "text" : "Не больше @duckling.number рублей."
+    }, {
+      "text" : "Я могу потратить @duckling.number рублей."
+    }, {
+      "text" : "Мой бюджет ограничен суммой @duckling.number рублей, можете что-то предложить?"
+    }, {
+      "text" : "Мой бюджет — @duckling.number рублей, постарайтесь что-то подобрать в этих пределах."
+    }, {
+      "text" : "У меня на это запланировано @duckling.number рублей"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "duckling.number",
+      "entity" : "duckling.number",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
     "priority" : 0
   } ],
   "entities" : [ {
