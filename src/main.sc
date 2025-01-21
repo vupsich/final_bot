@@ -36,7 +36,7 @@ theme: /
             go!: /getCity
             
         
-        # state: catchCity12
+        # state: catchCity123
         #     q: * [в] $City * * @duckling.number * * @duckling.number *
         #     script:
         #         $session.city = $parseTree._City.name
